@@ -18,6 +18,7 @@ $routeName = Route::currentRouteName(); // string
     <link href="/ocean/css/styles.css" type="text/css" rel="stylesheet" />
     <link href="/ocean/css/engine.css" type="text/css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800&display=swap&subset=cyrillic" rel="stylesheet">
 
     <title>@yield('title')</title>
