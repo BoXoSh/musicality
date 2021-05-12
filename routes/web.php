@@ -15,10 +15,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'getIndex'])->name('home.index');
-Route::get('/{id}-{alt_name}.html', [HomeController::class, 'getPost'])->name('home.get_post')->where([
-    'id' => '[0-9]+',
-    'alt_name' => '[a-z0-9-.]+'
-]);
+Route::get('/{id}-{alt_name}.html', [HomeController::class, 'getPost'])->name('home.get_post')->whereNumber('id')->where('alt_name', '[a-z0-9-.]+');
 Route::get('/novinki', [HomeController::class, 'getLastNews'])->name('home.lastnews');
 Route::get('/popular', [HomeController::class, 'getPopular'])->name('home.popular');
 Route::any('/search', [HomeController::class, 'search'])->name('home.search');
