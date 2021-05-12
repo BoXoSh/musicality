@@ -5,6 +5,9 @@ $xfields = $post->xfields;
 $song_name = $xfields->get(config('xfields.song_name'));
 $artist_name = $xfields->get(config('xfields.artist_name'));
 $song_poster = $xfields->get(config('xfields.song_poster'));
+if(empty($song_poster))
+    $song_poster = '/ocean/images/no_image.jpg';
+
 $mp3_url = $xfields->get(config('xfields.mp3_url'));
 $youtube_id = $xfields->get(config('xfields.youtube_id'));
 if ($youtube_id === '{id_youtube_0}')
