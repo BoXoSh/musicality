@@ -1,0 +1,146 @@
+h1, h2, h3, h4, h5, h6 {
+    color: #181818;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-weight: inherit;
+    color: #181818;
+}
+
+a {
+    text-decoration: unset;
+}
+
+a:hover {
+    color: #ff0202 !important;
+}
+
+/* Header
+-------------------------------------------------------------- */
+.top-wrap {
+    background-color: #e8280b;
+    padding: 20px 0 16px;
+}
+
+.top-wrap .logo,
+.top-wrap .follow-us {
+    float: left;
+}
+
+.top-wrap .logo {
+    margin: 10px 28px 10px 0;
+    height: auto;
+}
+
+.top-wrap .logo h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin: 0;
+}
+
+.top-wrap .logo h1 a {
+    color: white;
+}
+
+.top-wrap .logo h4 {
+    line-height: 1;
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: white;
+}
+
+
+.header-wrap {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.music {
+    border-top: 1px solid #eaeaea;
+}
+
+/* Widget most popular */
+.most-popular .order {
+    color: #e8280b;
+    float: left;
+    line-height: 25px;
+    padding: 0 17px 0 0;
+    width: 30px;
+}
+
+.most-popular li {
+    border-top: 1px solid #ededed;
+    padding-top: 15px;
+    margin-top: 14px;
+}
+
+.most-popular li:first-child {
+    border: none;
+    padding: 8px 0 0;
+    margin: 0;
+}
+
+.most-popular li p {
+    overflow: hidden;
+}
+
+.most-popular li a {
+    color: #181818;
+    font-size: 16px;
+    line-height: 24px;
+    overflow: hidden;
+}
+
+.most-popular li a:hover {
+    text-decoration: none;
+}
+
+.page-link, .page-link:active, .page-link:focus {
+    color: #212529;
+}
+
+.post-head p {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.activity span {
+    position: relative;
+    padding-left: 23px;
+    margin-left: 17px;
+}
+
+.activity span:first-child {
+    margin-left: 0;
+}
+
+.activity span,
+.activity span a {
+    color: #2d3340;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.activity span.post-views:before,
+.activity span.post-date:before {
+    font-family: "Font Awesome 5 Free";
+    color: #cfd0d2;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.activity span a:hover {
+    text-decoration: none;
+}
+
+.activity span.post-views:before {
+    content: "\f06e";
+}
+
+.activity span.post-date:before {
+    content: "\f133";
+}
