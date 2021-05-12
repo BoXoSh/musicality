@@ -2,6 +2,7 @@
 
 return [
 
+    'template' => env('APP_TEMPLATE', 'ocean'),
     /*
     |--------------------------------------------------------------------------
     | Application Name

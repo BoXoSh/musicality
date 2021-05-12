@@ -77,7 +77,7 @@ class Post extends Model
 
     private static function deleteFile(self $item)
     {
-        $filepath = $item->xfields->get('orginal');
+        $filepath = $item->xfields->get(config('xfields.mp3_url'));
         if (!empty($filepath)) {
             $filepath = str_replace(env('APP_URL'), '', $filepath);
             $filepath = base_path($filepath);
