@@ -11,14 +11,12 @@
                     <img src="{{ $album->poster }}" alt="{{ $album->name}}"/>
                 </div>
                 <div class="fdesc fx-1">
-                                        <h1 class="sect-title sect-header"><span>{{ $album->name }}</span></h1>
-                    <p>{!! $album->artistsurl !!}</p>
+                    <h1 style="margin-bottom: 5px" class="sect-title sect-header"><span>{{ $album->name }}</span></h1>
+                    <p style="margin-bottom: 15px">{!! $album->artistsurl !!}</p>
                     <ul class="finfo">
-                                                <li><span>Слушали:</span> <span>{{ '' }}</span></li>
-                                                <li><span>Размер:</span> <span>{{ '' }}</span></li>
-                                                <li><span>Длительность:</span> <span>{{ '' }}</span></li>
-                                                <li><span>Год:</span> <span>{{ '' }}</span></li>
-                                                <li><span>Дата релиза:</span> <span>{{ '' }}</span></li>
+                            <li><span>Слушали:</span> <span>{{ '' }}</span></li>
+                            <li><span>Размер:</span> <span>{{ '' }}</span></li>
+                            <li><span>Длительность:</span> <span>{{ '' }}</span></li>
                     </ul>
                 </div>
             </div>
