@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="row">
-        @include('ocean.parts.album', ['artists' => $artists])
+        @include('ocean.parts.artist', ['artists' => $artists])
     </div>
 
     <div class="bottom-nav clr">
