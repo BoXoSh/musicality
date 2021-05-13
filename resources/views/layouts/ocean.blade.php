@@ -11,8 +11,8 @@ $routeName = Route::currentRouteName(); // string
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#061d24">
     <link rel="shortcut icon" href="/ocean/images/logo.svg" />
-    <link rel="preload" href="/ocean/css/styles.css" as="style">
-    <link rel="preload" href="/ocean/css/bootstrap/bootstrap-grid.min.css" as="style">
+{{--    <link rel="preload" href="/ocean/css/styles.css" as="style">--}}
+{{--    <link rel="preload" href="/ocean/css/bootstrap/bootstrap-grid.min.css" as="style">--}}
 
     <link rel="preload" href="/ocean/js/jquery.js" as="script">
     <link rel="preload" href="/ocean/js/libs.min.js" as="script">
