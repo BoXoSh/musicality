@@ -11,7 +11,7 @@
     </div>
 
     <div class="bottom-nav clr">
-        {{ $albums->links() }}
+        {{ $artists->links() }}
     </div>
 
 @endsection
