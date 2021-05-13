@@ -7,7 +7,7 @@
         if(empty($song_poster))
             $song_poster = '/ocean/images/no_image.jpg';
     @endphp
-<div class="track-item fx-row fx-middle js-item" data-track="{{ $xf->get(config('mp3_url')) }}" data-title="{{ $song_name }}" data-artist="{{ $artist_name }}" data-img="{{ $song_poster }}">
+<div class="track-item fx-row fx-middle js-item" data-track="{{ $xf->get(config('xfields.mp3_url')) }}" data-title="{{ $song_name }}" data-artist="{{ $artist_name }}" data-img="{{ $song_poster }}">
     <div class="track-play fx-col fx-center anim js-play"><span class="fas fa-play"></span></div>
     <a class="track-desc fx-1 nowrap" href="{{ route('home.get_post', ['id'=> $post->id, 'alt_name' => $post->alt_name]) }}">
         <div class="track-title">{{ $song_name }}</div>
