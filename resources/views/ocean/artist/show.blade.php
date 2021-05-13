@@ -8,9 +8,9 @@
         <div class="sect fmain">
             <div class="fcols fx-row">
                 <div class="img-fit">
-                    <img src="{{ $artist->poster }}" alt="{{ $artist->name}}" style="border-radius: 100%"/>
+                    <img src="{{ $artist->poster }}" alt="{{ $artist->name}}" style="border-radius: 100%;width:180px;height: 180px;"/>
                 </div>
-                <div class="fdesc fx-1">
+                <div class="fdesc fx-1 ml-3">
                     <h1 style="margin-bottom: 5px" class="sect-title sect-header"><span>{{ $artist->name }}</span></h1>
                     <ul class="finfo">
                             <li><span>Название:</span> <span>{!! $artist->name !!}</span></li>
