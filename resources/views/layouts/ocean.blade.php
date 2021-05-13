@@ -15,8 +15,9 @@ $routeName = Route::currentRouteName(); // string
     <link rel="preload" href="/ocean/css/engine.css" as="style">
     <link rel="preload" href="/ocean/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/ocean/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/ocean/css/styles.css" type="text/css" rel="stylesheet" />
-    <link href="/ocean/css/engine.css" type="text/css" rel="stylesheet" />
+    <link href="/ocean/css/styles.css?t={{ filemtime(public_path('/ocean/css/styles.css')) }}" type="text/css" rel="stylesheet" />
+    <link href="/ocean/css/engine.css?t={{ filemtime(public_path('/ocean/css/engine.css')) }}" type="text/css" rel="stylesheet" />
+    <link href="/ocean/css/bootstrap/grid.min.css?t={{ filemtime(public_path('/ocean/css/bootstrap/grid.min.css')) }}" type="text/css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800&display=swap&subset=cyrillic" rel="stylesheet">
