@@ -4,7 +4,7 @@
 $xfields = $post->xfields;
 $song_name = $xfields->get(config('xfields.song_name'));
 $artist_name = $xfields->get(config('xfields.artist_name'));
-$artists_url = $xfields->get(config('xfields.album_url'));
+$artists_url = $xfields->get(config('xfields.artists_url'));
 $song_poster = $xfields->get(config('xfields.song_poster'));
 if(empty($song_poster))
     $song_poster = '/ocean/images/no_image.jpg';
