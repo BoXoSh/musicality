@@ -17,8 +17,8 @@ $routeName = Route::currentRouteName(); // string
     <link rel="preload" href="/ocean/js/jquery.js" as="script">
     <link rel="preload" href="/ocean/js/libs.min.js" as="script">
 {{--    <link rel="preload" href="/ocean/css/engine.css" as="style">--}}
-    <link rel="preload" href="/ocean/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/ocean/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+{{--    <link rel="preload" href="/ocean/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>--}}
+{{--    <link rel="preload" href="/ocean/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>--}}
     <link href="/ocean/css/styles.css?t={{ filemtime(public_path('/ocean/css/styles.css')) }}" type="text/css" rel="stylesheet" />
 {{--    <link href="/ocean/css/engine.css?t={{ filemtime(public_path('/ocean/css/engine.css')) }}" type="text/css" rel="stylesheet" />--}}
     <link href="/ocean/css/bootstrap/bootstrap-grid.min.css?t={{ filemtime(public_path('/ocean/css/bootstrap/bootstrap-grid.min.css')) }}" type="text/css" rel="stylesheet" />
