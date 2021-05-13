@@ -11,15 +11,15 @@ $routeName = Route::currentRouteName(); // string
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#061d24">
     <link rel="shortcut icon" href="/ocean/images/logo.svg" />
-{{--    <link rel="preload" href="/ocean/css/styles.css" as="style">--}}
-{{--    <link rel="preload" href="/ocean/css/bootstrap/bootstrap-grid.min.css" as="style">--}}
+    <link rel="preload" href="/ocean/css/styles.min.css" as="style">
+    <link rel="preload" href="/ocean/css/bootstrap/bootstrap-grid.min.css" as="style">
 
     <link rel="preload" href="/ocean/js/jquery.js" as="script">
     <link rel="preload" href="/ocean/js/libs.min.js" as="script">
 {{--    <link rel="preload" href="/ocean/css/engine.css" as="style">--}}
-{{--    <link rel="preload" href="/ocean/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>--}}
-{{--    <link rel="preload" href="/ocean/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>--}}
-    <link href="/ocean/css/styles.css?t={{ filemtime(public_path('/ocean/css/styles.css')) }}" type="text/css" rel="stylesheet" />
+    <link rel="preload" href="/ocean/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/ocean/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/ocean/css/styles.min.css?t={{ filemtime(public_path('/ocean/css/styles.css')) }}" type="text/css" rel="stylesheet" />
 {{--    <link href="/ocean/css/engine.css?t={{ filemtime(public_path('/ocean/css/engine.css')) }}" type="text/css" rel="stylesheet" />--}}
     <link href="/ocean/css/bootstrap/bootstrap-grid.min.css?t={{ filemtime(public_path('/ocean/css/bootstrap/bootstrap-grid.min.css')) }}" type="text/css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
