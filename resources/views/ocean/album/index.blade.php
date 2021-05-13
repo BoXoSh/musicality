@@ -6,7 +6,7 @@
 @section('head_title', 'Последные новинки')
 @section('content')
 
-    <div class="fcols fx-row">
+    <div class="row">
         @include('ocean.parts.album', ['albums' => $albums])
     </div>
 
