@@ -4,8 +4,8 @@
     $popular_music = Cache::remember('right_side_popular_music', 7200, function (){
         return \App\Models\Post::query()
             ->select('post.*')
-            ->leftJoin('post_extras', 'post.id', '=', 'post_extras.news_id')
-            ->orderByDesc('post_extras.news_read')
+            ->leftJoin('dle_post_extras', 'post.id', '=', 'dle_post_extras.news_id')
+            ->orderByDesc('dle_post_extras.news_read')
             ->limit(10)
             ->get();
     });

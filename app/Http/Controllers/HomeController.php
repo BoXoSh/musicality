@@ -15,7 +15,6 @@ class HomeController extends Controller
             return Post::query()->orderByDesc('id')->paginate(15);
         });
 
-
         return $this->view('welcome', [
             'last_posts' => $lastPosts
         ]);
