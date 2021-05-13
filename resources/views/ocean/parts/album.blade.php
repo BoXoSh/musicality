@@ -6,7 +6,7 @@
         </a>
         <p class="album-title"><a href="{{ route('albums.get-show', ['id' => $album->id, 'slug' => $album->url]) }}">{{ $album->name }}</a></p>
         <p class="album-artist">
-            {!! str_replace(',','',$album->artistsurl) !!}
+            {{ $album->artist_name }}
         </p>
     </div>
 @endforeach
