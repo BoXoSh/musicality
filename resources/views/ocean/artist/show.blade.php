@@ -1,22 +1,20 @@
 <?php
-/** @var \App\Models\Album $album */
+/** @var \App\Models\Artist $artist */
 ?>
-@section('title', $album->name.' Скачать свежую музыку бесплатно')
+@section('title', $artist->name.' Скачать свежую музыку бесплатно')
 @extends('layouts.ocean')
 @section('content')
     <article class="article ignore-select">
         <div class="sect fmain">
             <div class="fcols fx-row">
                 <div class="fimg img-fit">
-                    <img src="{{ $album->poster }}" alt="{{ $album->name}}"/>
+                    <img src="{{ $artist->poster }}" alt="{{ $artist->name}}" style="border-radius: 100%"/>
                 </div>
                 <div class="fdesc fx-1">
-                    <h1 style="margin-bottom: 5px" class="sect-title sect-header"><span>{{ $album->name }}</span></h1>
-                    <p style="margin-bottom: 15px">{!! $album->artistsurl !!}</p>
+                    <h1 style="margin-bottom: 5px" class="sect-title sect-header"><span>{{ $artist->name }}</span></h1>
                     <ul class="finfo">
-                            <li><span>Артисты:</span> <span>{!! $album->artistsurl !!}</span></li>
-                            <li><span>Название:</span> <span>{!! $album->name !!}</span></li>
-                            <li><span>Треков:</span> <span>{{ $album->counttrack }}</span></li>
+                            <li><span>Название:</span> <span>{!! $artist->name !!}</span></li>
+                            <li><span>Треков:</span> <span>{{ $artist->counttrack }}</span></li>
                     </ul>
                 </div>
             </div>
