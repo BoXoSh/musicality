@@ -391,9 +391,16 @@ body.opened-menu {overflow: hidden; width: 100%; height: 100%;}
 }
 
 .album .album-title {
-	overflow: hidden;max-height: 88px;overflow-wrap: break-word;color: rgb(0, 0, 0);text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;
+	overflow: hidden;
+	max-height: 88px;
+	overflow-wrap: break-word;
+	color: rgb(0, 0, 0);
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
     transition: color 150ms linear 0s;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 15px;
     line-height: 22px;
     width: 100%;
