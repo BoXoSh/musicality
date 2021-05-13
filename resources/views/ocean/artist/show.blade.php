@@ -7,7 +7,7 @@
     <article class="article ignore-select">
         <div class="sect fmain">
             <div class="fcols fx-row">
-                <div class="fimg img-fit">
+                <div class="img-fit">
                     <img src="{{ $artist->poster }}" alt="{{ $artist->name}}" style="border-radius: 100%"/>
                 </div>
                 <div class="fdesc fx-1">
