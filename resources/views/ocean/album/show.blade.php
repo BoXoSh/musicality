@@ -1,6 +1,5 @@
 <?php
 /** @var \App\Models\Album $album */
-
 ?>
 @section('title', $album->name.' Скачать свежую музыку бесплатно')
 @extends('layouts.ocean')
@@ -12,20 +11,21 @@
                     <img src="{{ $album->poster }}" alt="{{ $album->name}}"/>
                 </div>
                 <div class="fdesc fx-1">
-                    {{--                    <h1 class="sect-title sect-header"><span>{{ $artist_name }}</span> - {{ $song_name }}</h1>--}}
+                                        <h1 class="sect-title sect-header"><span>{{ $album->name }}</span></h1>
+                    <p>{!! $album->artistsurl !!}</p>
                     <ul class="finfo">
-                        {{--                        <li><span>Слушали:</span> <span>{{ $album->extras->news_read }}</span></li>--}}
-                        {{--                        <li><span>Размер:</span> <span>{{ $xfields->get(config('xfields.song_filesize')) }} MB</span></li>--}}
-                        {{--                        <li><span>Длительность:</span> <span>{{ $xfields->get(config('xfields.song_duration')) }}</span></li>--}}
-                        {{--                        <li><span>Год:</span> <span>{{ $xfields->get(config('xfields.song_year')) }}</span></li>--}}
-                        {{--                        <li><span>Дата релиза:</span> <span>{{ $album->date->format('d F Y') }}</span></li>--}}
+                                                <li><span>Слушали:</span> <span>{{ '' }}</span></li>
+                                                <li><span>Размер:</span> <span>{{ '' }}</span></li>
+                                                <li><span>Длительность:</span> <span>{{ '' }}</span></li>
+                                                <li><span>Год:</span> <span>{{ '' }}</span></li>
+                                                <li><span>Дата релиза:</span> <span>{{ '' }}</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="sect sect-bg">
-            <div class="sect-header sect-title">Песни</div>
+{{--            <div class="sect-header sect-title">Песни</div>--}}
             <div class="sect-content">
                 @include('ocean.parts.short_news', ['posts' => $posts])
             </div>
