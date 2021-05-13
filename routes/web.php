@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlbumsController;
+use App\Http\Controllers\ArtistsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::any('/search', [HomeController::class, 'search'])->name('home.search');
 
 Route::get('/albums', [AlbumsController::class, 'getIndex'])->name('albums.index');
 Route::get('/album/{id}-{slug}.html', [AlbumsController::class, 'getShow'])->name('albums.get-show')->whereNumber('id')->where('slug', '[a-z0-9-.]+');
+
+Route::get('/artists', [ArtistsController::class, 'getIndex'])->name('artists.index');
+Route::get('/artist/{id}-{slug}.html', [ArtistsController::class, 'getShow'])->name('artists.get-show')->whereNumber('id')->where('slug', '[a-z0-9-.]+');
