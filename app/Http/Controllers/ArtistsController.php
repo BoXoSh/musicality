@@ -13,13 +13,13 @@ class ArtistsController extends Controller
     {
         $arists = Artist::query()->orderByDesc('id')->paginate(16);
 
-        return $this->view('artist.index', ['albums' => $arists]);
+        return $this->view('artist.index', ['artists' => $arists]);
     }
 
     public function getShow($id, $slug)
     {
         $artist = Artist::query()->where('id', $id)->where('url', $slug)->firstOrFail();
         $posts = Post::query()->where('xfields', 'like', '%' . config('xfields.artist_id') . '|' . $artist->id_zvuk.'%')->paginate(10);
-        return $this->view('artist.show', ['album' => $artist, 'posts' => $posts]);
+        return $this->view('artist.show', ['artist' => $artist, 'posts' => $posts]);
     }
 }
