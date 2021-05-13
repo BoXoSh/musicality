@@ -11,12 +11,6 @@ article, aside, figure, figure img, hgroup, footer, header, nav, section, main {
 img {max-width: 100%;}
 .clr {clear: both;}
 .clearfix:after {content: ""; display: table; clear: both;}
-@font-face{font-family:'Font Awesome 5 Pro';font-style:normal;font-weight:300;font-display:swap;
-	src:url(../webfonts/fa-light-300.woff2) format("woff2"),url(../webfonts/fa-light-300.woff) format("woff")}
-.fal{font-family:'Font Awesome 5 Pro';font-weight:300}
-@font-face{font-family:'Font Awesome 5 Pro';font-style:normal;font-weight:900;font-display:swap;
-	src:url(../webfonts/fa-solid-900.woff2) format("woff2"),url(../webfonts/fa-solid-900.woff) format("woff")}
-.fa,.fas{font-family:'Font Awesome 5 Pro';font-weight:900}
 body {font: 15px 'Montserrat', sans-serif; line-height: normal; padding: 0; margin: 0;
 	color: #333; background: #061d24 url(../images/wheat.webp); min-height: 100%; width: 100%; font-weight: 400;}
 a {color: #333; text-decoration: none;}
