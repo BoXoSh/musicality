@@ -38,7 +38,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $table = 'post';
+    protected $table = 'dle_post';
 
     protected $casts = [
         'date' => 'datetime'

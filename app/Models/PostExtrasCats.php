@@ -10,6 +10,6 @@ use Illuminate\Support\Collection;
 
 class PostExtrasCats extends Model
 {
-    protected $table = "post_extras_cats";
+    protected $table = "dle_post_extras_cats";
     protected $guarded = [];
 }

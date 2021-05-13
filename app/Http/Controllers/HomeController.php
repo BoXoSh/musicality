@@ -30,8 +30,7 @@ class HomeController extends Controller
 
         $related_posts = Post::query()->where('category', $post->category)->where('id', '!=', $post->id)->inRandomOrder()->limit(5)->get();
 
-        $dbPrefix = env('DB_PREFIX', '');
-        DB::update("UPDATE `" . $dbPrefix . "post_extras` SET `news_read` = `news_read`+1 WHERE `news_id` = ?", [$post->id]);
+        DB::update("UPDATE `dle_post_extras` SET `news_read` = `news_read`+1 WHERE `news_id` = ?", [$post->id]);
 
         return $this->view('view', [
             'post' => $post,

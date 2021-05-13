@@ -1,0 +1,17 @@
+<?php
+/** @var \App\Models\Album[] $albums */
+?>
+@section('title', 'Албомы')
+@extends('layouts.ocean')
+@section('head_title', 'Последные новинки')
+@section('content')
+
+    <div class="fcols fx-row">
+        @include('ocean.parts.album', ['albums' => $albums])
+    </div>
+
+    <div class="bottom-nav clr">
+        {{ $albums->links() }}
+    </div>
+
+@endsection

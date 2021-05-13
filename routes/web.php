@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AlbumsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/{id}-{alt_name}.html', [HomeController::class, 'getPost'])->name('h
 Route::get('/novinki', [HomeController::class, 'getLastNews'])->name('home.lastnews');
 Route::get('/popular', [HomeController::class, 'getPopular'])->name('home.popular');
 Route::any('/search', [HomeController::class, 'search'])->name('home.search');
+
+Route::get('/albums', [AlbumsController::class, 'getIndex'])->name('albums.index');
+Route::get('/album/{id}-{slug}.html', [AlbumsController::class, 'getShow'])->name('albums.get-show')->whereNumber('id')->where('slug', '[a-z0-9-.]+');
