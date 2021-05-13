@@ -11,7 +11,7 @@ class AlbumsController extends Controller
 {
     public function getIndex()
     {
-        $albums = Album::query()->orderByDesc('id')->paginate(15);
+        $albums = Album::query()->orderByDesc('id')->paginate(16);
 
         return $this->view('album.index', ['albums' => $albums]);
     }
