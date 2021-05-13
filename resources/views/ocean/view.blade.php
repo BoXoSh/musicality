@@ -25,11 +25,13 @@ if ($youtube_id === '{id_youtube_0}')
                 <div class="fdesc fx-1">
                     <h1 class="sect-title sect-header"><span>{{ $artist_name }}</span> - {{ $song_name }}</h1>
                     <ul class="finfo">
-                        <li><span>Слушали:</span> <span>{{ $post->extras->news_read }}</span></li>
+                        artist_name|Zivert||track_name|Life||name|{name}||description|{description}||artists_link|<a href="/artist/31-zivert.html">Zivert</a>||album_link|<a href="/album/42-vinyl-1.html">Vinyl #1</a>||music_link|/uploads/files/2021-05/1a1fadaec6fc2f06e9c5d5ffee5e1034_zivert-life.mp3||id_zvuk|65166794||id_album|9350408||id_artist|99662297||id_youtube_0|{id_youtube_0}||genre|Поп||poster|/uploads/posts/2021-05/1955a1f6d7c009166847d83df7bbb3c1_image.jpeg||image|https://cdn52.zvuk.com/pic?type=release&id=9350408&size=500x500&ext=jpg||duration|3:8||size|7.5||year|2019||album_name|Vinyl #1
+
+                        <li><span>Артисты:</span> <span>{{ $xfields->get(config('xfields.artists_url')) }}</span></li>
+                        <li><span>Альбом:</span> <span>{{ $xfields->get(config('xfields.album_url')) }}</span></li>
                         <li><span>Размер:</span> <span>{{ $xfields->get(config('xfields.song_filesize')) }} MB</span></li>
                         <li><span>Длительность:</span> <span>{{ $xfields->get(config('xfields.song_duration')) }}</span></li>
                         <li><span>Год:</span> <span>{{ $xfields->get(config('xfields.song_year')) }}</span></li>
-                        <li><span>Дата релиза:</span> <span>{{ $post->date->format('d F Y') }}</span></li>
                     </ul>
                 </div>
             </div>
