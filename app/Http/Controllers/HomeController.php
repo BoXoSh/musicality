@@ -11,9 +11,9 @@ class HomeController extends Controller
 {
     public function getIndex(Request $request)
     {
-        $lastPosts = Cache::remember('idx_last_posts', 7200, function () {
-            return Post::query()->orderByDesc('id')->paginate(15);
-        });
+//        $lastPosts = Cache::remember('idx_last_posts', 7200, function () {
+        $lastPosts = Post::query()->orderByDesc('id')->paginate(15);
+//        });
 
         return $this->view('welcome', [
             'last_posts' => $lastPosts
