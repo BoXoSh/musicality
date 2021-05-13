@@ -8,7 +8,8 @@
                     href="{{ route('albums.get-show', ['id' => $album->id, 'slug' => $album->url]) }}">{{ $album->name }}</a>
         </p>
         <p class="album-artist">
-            {{ $album->artist_name }}
+{{--            {{ $album->artist_name }}--}}
+            {!! $album->artistsurl !!}
         </p>
     </div>
 @endforeach
