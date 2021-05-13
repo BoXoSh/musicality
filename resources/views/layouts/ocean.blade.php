@@ -12,7 +12,7 @@ $routeName = Route::currentRouteName(); // string
     <meta name="theme-color" content="#061d24">
     <link rel="shortcut icon" href="/ocean/images/logo.svg" />
     <link rel="preload" href="/ocean/css/styles.css" as="style">
-    <link rel="preload" href="/ocean/css/engine.css" as="style">
+{{--    <link rel="preload" href="/ocean/css/engine.css" as="style">--}}
     <link rel="preload" href="/ocean/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/ocean/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link href="/ocean/css/styles.css?t={{ filemtime(public_path('/ocean/css/styles.css')) }}" type="text/css" rel="stylesheet" />
@@ -133,7 +133,7 @@ $routeName = Route::currentRouteName(); // string
             <li><a href="#">Правила</a></li>
             <li><a href="#">О портале</a></li>
         </ul>
-        <div class="footer-counter"><img src="/ocean/images/counter.gif" alt=""></div>
+        <div class="footer-counter"></div>
         <div id="gotop"><span class="fal fa-arrow-up"></span></div>
     </footer>
 
@@ -142,9 +142,7 @@ $routeName = Route::currentRouteName(); // string
 </div>
 
 <!-- END WRAP -->
-
 <script src="/ocean/js/jquery.js"></script>
-<script src="/ocean/js/jquery.ui.js"></script>
 <script src="/ocean/js/libs.js"></script>
 @yield('scripts')
 </body>
