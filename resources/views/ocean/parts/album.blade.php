@@ -1,9 +1,12 @@
 <?php /** @var $albums \App\Models\Album[] */ ?>
 @foreach($albums as $album)
-    <div class="fimg img-fit">
+    <div class="album">
         <a href="{{ route('albums.get-show', ['id' => $album->id, 'slug' => $album->url]) }}">
-            <img src="{{ $album->poster }}" alt="{{ $album->name }}">
+            <img src="{{ $album->poster }}" alt="{{ $album->name }}" class="img-fit fimg">
         </a>
-        <p><a href="{{ route('albums.get-show', ['id' => $album->id, 'slug' => $album->url]) }}">{{ $album->name }}</a></p>
+        <p class="album-title"><a href="{{ route('albums.get-show', ['id' => $album->id, 'slug' => $album->url]) }}">{{ $album->name }}</a></p>
+        <p class="album-artist">
+            {!! $album->artistsurl !!}
+        </p>
     </div>
 @endforeach
