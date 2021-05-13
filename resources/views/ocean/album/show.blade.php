@@ -14,9 +14,9 @@
                     <h1 style="margin-bottom: 5px" class="sect-title sect-header"><span>{{ $album->name }}</span></h1>
                     <p style="margin-bottom: 15px">{!! $album->artistsurl !!}</p>
                     <ul class="finfo">
-                            <li><span>Слушали:</span> <span>{{ '' }}</span></li>
-                            <li><span>Размер:</span> <span>{{ '' }}</span></li>
-                            <li><span>Длительность:</span> <span>{{ '' }}</span></li>
+                            <li><span>Артисты:</span> <span>{!! $album->artistsurl !!}</span></li>
+                            <li><span>Название:</span> <span>{!! $album->name !!}</span></li>
+                            <li><span>Треков:</span> <span>{{ $album->counttrack }}</span></li>
                     </ul>
                 </div>
             </div>
