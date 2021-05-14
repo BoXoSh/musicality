@@ -19,7 +19,7 @@ class AlbumsController extends Controller
     public function getShow($id, $slug)
     {
         $album = Album::query()->where('id', $id)->where('url', $slug)->firstOrFail();
-        $posts = Post::query()->where('xfields', 'like', '%' . config('xfields.album_id') . '|' . $album->id_zvuk.'%')->paginate(10);
+        $posts = Post::query()->where('xfields', 'like', '%' . $album->id_zvuk.'%')->paginate(10);
         return $this->view('album.show', ['album' => $album, 'posts' => $posts]);
     }
 }
