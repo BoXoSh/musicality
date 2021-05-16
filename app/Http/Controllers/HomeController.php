@@ -51,9 +51,9 @@ class HomeController extends Controller
     public function getPopular()
     {
         $lastPosts = Post::query()
-            ->select('post.*')
-            ->leftJoin('post_extras', 'post.id', '=', 'post_extras.news_id')
-            ->orderByDesc('post_extras.news_read')
+            ->select('dle_post.*')
+            ->leftJoin('dle_post_extras', 'dle_post.id', '=', 'dle_post_extras.news_id')
+            ->orderByDesc('dle_post_extras.news_read')
             ->paginate(15);
 
         return $this->view('popular', [
@@ -80,7 +80,7 @@ class HomeController extends Controller
     public function getGenre($genre)
     {
         $posts = Post::query()
-            ->select('post.*')
+            ->select('dle_post.*')
             ->whereRaw('LOWER(xfields) like \'?\'', ['%genre|%' . mb_strtolower($genre) . '%'])
             ->paginate(15);
 
