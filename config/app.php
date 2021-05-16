@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'force_https' => env('APP_FORCE_HTTPS', false),
     'template' => env('APP_TEMPLATE', 'ocean'),
     /*
     |--------------------------------------------------------------------------
