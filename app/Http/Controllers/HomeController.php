@@ -85,7 +85,8 @@ class HomeController extends Controller
             ->paginate(15);
 
         return $this->view('genre', [
-            'posts' => $posts
+            'posts' => $posts,
+            'title' => $genre
         ]);
     }
 }
