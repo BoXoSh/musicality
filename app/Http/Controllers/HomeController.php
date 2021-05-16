@@ -81,6 +81,7 @@ class HomeController extends Controller
     {
         $posts = Post::query()
             ->whereRaw('LOWER(xfields) like ?', ['%genre|%' . mb_strtolower($genre) . '%'])
+            ->orderByDesc('id')
             ->paginate(15);
 
         return $this->view('genre', [
