@@ -62,10 +62,11 @@ $routeName = Route::currentRouteName(); // string
 
         <nav class="nav to-mob">
             <ul class="main-nav fx-row">
+                <li><a href="/novinki"><span class="fal fa-compact-disc"></span>Новинки</a></li>
                 <li class="submenu">
                     <a href="#"><span class="fal fa-list-music"></span>Жанры</a>
                     <ul class="hidden-menu anim">
-                        <li><a href="#">Поп</a></li>
+                        <li><a href="#">Нр</a></li>
                         <li><a href="#">Зарубежный рэп</a></li>
                         <li><a href="#">Шансон</a></li>
                         <li><a href="#">Русский рэп</a></li>
@@ -82,14 +83,10 @@ $routeName = Route::currentRouteName(); // string
                         <li><a href="#">Webrambo</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><span class="fal fa-compact-disc"></span>Хиты</a></li>
-                <li><a href="#"><span class="fal fa-trophy"></span>Топ 100</a></li>
-                <li><a href="#"><span class="fal fa-dumbbell"></span>Тренировки</a></li>
-                <li><a href="#"><span class="fal fa-glass-cheers"></span>Новогодние</a></li>
-                <li><a href="#"><span class="fal fa-tire"></span>В машину</a></li>
-                <li><a href="#"><span class="fal fa-folders"></span>Подборки</a></li>
-                <li><a href="#"><span class="fal fa-album-collection"></span>Альбомы</a></li>
-                <li><a href="#"><span class="fal fa-radio"></span>Радио</a></li>
+                <li><a href="/artists"><span class="fal fa-trophy"></span>Исполнители</a></li>
+                <li><a href="#"><span class="fal fa-dumbbell"></span>Сборники</a></li>
+                <li><a href="#"><span class="fal fa-glass-cheers"></span>Детские песни</a></li>
+                <li><a href="/albums"><span class="fal fa-tire"></span>Альбомы</a></li>
             </ul>
         </nav>
 
