@@ -83,10 +83,10 @@ $routeName = Route::currentRouteName(); // string
                         <li><a href="#">Webrambo</a></li>
                     </ul>
                 </li>
-                <li><a href="/artists"><span class="fal fa-trophy"></span>Исполнители</a></li>
-                <li><a href="#"><span class="fal fa-dumbbell"></span>Сборники</a></li>
-                <li><a href="#"><span class="fal fa-glass-cheers"></span>Детские песни</a></li>
-                <li><a href="/albums"><span class="fal fa-tire"></span>Альбомы</a></li>
+                <li><a href="/artists"><span class="fal fa-user-music"></span>Исполнители</a></li>
+                <li><a href="#"><span class="fal fa-album-collection"></span>Сборники</a></li>
+                <li><a href="#"><span class="fal fa-child"></span>Детские песни</a></li>
+                <li><a href="/albums"><span class="fal fa-album"></span>Альбомы</a></li>
             </ul>
         </nav>
 
