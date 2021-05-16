@@ -85,7 +85,7 @@ $routeName = Route::currentRouteName(); // string
                 </li>
                 <li><a href="/artists"><span class="fal fa-user-music"></span>Исполнители</a></li>
                 <li><a href="#"><span class="fal fa-album-collection"></span>Сборники</a></li>
-                <li><a href="#"><span class="fal fa-child"></span>Детские песни</a></li>
+                <li><a href="/genre/Детская"><span class="fal fa-child"></span>Детские песни</a></li>
                 <li><a href="/albums"><span class="fal fa-album"></span>Альбомы</a></li>
             </ul>
         </nav>

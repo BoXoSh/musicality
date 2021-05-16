@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{DB, Cache};
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -50,7 +50,7 @@ class HomeController extends Controller
 
     public function getPopular()
     {
-        $lastPosts = \App\Models\Post::query()
+        $lastPosts = Post::query()
             ->select('post.*')
             ->leftJoin('post_extras', 'post.id', '=', 'post_extras.news_id')
             ->orderByDesc('post_extras.news_read')
@@ -75,5 +75,17 @@ class HomeController extends Controller
             'last_posts' => $lastPosts
         ]);
 //        MATCH (title, short_story, full_story, xfields) AGAINST ('{$body}')
+    }
+
+    public function getGenre($genre)
+    {
+        $posts = Post::query()
+            ->select('post.*')
+            ->where('xfields', 'ilike', '%genre|%' . $genre . '%')
+            ->paginate(15);
+
+        return $this->view('genre', [
+            'posts' => $posts
+        ]);
     }
 }

@@ -27,3 +27,5 @@ Route::get('/album/{id}-{slug}.html', [AlbumsController::class, 'getShow'])->nam
 
 Route::get('/artists', [ArtistsController::class, 'getIndex'])->name('artists.index');
 Route::get('/artist/{id}-{slug}.html', [ArtistsController::class, 'getShow'])->name('artists.get-show')->whereNumber('id')->where('slug', '[a-z0-9-.]+');
+
+Route::get('/genre/{genre}', [HomeController::class, 'getGenre'])->name('genre')->where('slug', '[a-z0-9-.]+');
