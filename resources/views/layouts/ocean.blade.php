@@ -66,21 +66,31 @@ $routeName = Route::currentRouteName(); // string
                 <li class="submenu">
                     <a href="#"><span class="fal fa-list-music"></span>Жанры</a>
                     <ul class="hidden-menu anim">
-                        <li><a href="#">Нр</a></li>
-                        <li><a href="#">Зарубежный рэп</a></li>
-                        <li><a href="#">Шансон</a></li>
-                        <li><a href="#">Русский рэп</a></li>
-                        <li><a href="#">House</a></li>
-                        <li><a href="#">Deep House</a></li>
-                        <li><a href="#">Танцевальная</a></li>
-                        <li><a href="#">Русский рок</a></li>
-                        <li><a href="#">Рейв</a></li>
-                        <li><a href="#">Зарубежный рок</a></li>
-                        <li><a href="#">Электронная</a></li>
-                        <li><a href="#">Drum-n-Bass</a></li>
-                        <li><a href="#">Lounge</a></li>
-                        <li><a href="#">Джаз</a></li>
-                        <li><a href="#">Webrambo</a></li>
+                        <li><a href="/genre/Русский рэп">Русский рэп</a></li>
+                        <li><a href="/genre/K-Pop">K-Pop</a></li>
+                        <li><a href="/genre/Поп-музыка">Поп-музыка</a></li>
+                        <li><a href="/genre/Из видеоигр">Из видеоигр</a></li>
+                        <li><a href="/genre/Диджей-миксы">Диджей-миксы</a></li>
+                        <li><a href="/genre/Премия МУЗ-ТВ">Премия МУЗ-ТВ</a></li>
+                        <li><a href="/genre/Релакс">Релакс</a></li>
+                        <li><a href="/genre/Рок">Рок</a></li>
+                        <li><a href="/genre/Тренировка">Тренировка</a></li>
+                        <li><a href="/genre/Метал">Метал</a></li>
+                        <li><a href="/genre/Хип-хоп">Хип-хоп</a></li>
+                        <li><a href="/genre/Cаундтреки">Cаундтреки</a></li>
+                        <li><a href="/genre/Вечеринка">Вечеринка</a></li>
+                        <li><a href="/genre/Мотивация">Мотивация</a></li>
+                        <li><a href="/genre/Хиты по годам">Хиты по годам</a></li>
+                        <li><a href="/genre/Электроника">Электроника</a></li>
+                        <li><a href="/genre/Альтернатива">Альтернатива</a></li>
+                        <li><a href="/genre/Русский шансон">Русский шансон</a></li>
+                        <li><a href="/genre/R&B и фанк">R&B и фанк</a></li>
+                        <li><a href="genre/Классическая">Классическая</a></li>
+                        <li><a href="/genre/В дорогу">В дорогу</a></li>
+                        <li><a href="/genre/Грустно">Грустно</a></li>
+                        <li><a href="/genreДжаз">Джаз</a></li>
+                        <li><a href="/genre/Блюз">Блюз</a></li>
+                        <li><a href="/genre/9 мая"></a>9 мая</li>
                     </ul>
                 </li>
                 <li><a href="/artists"><span class="fal fa-user-music"></span>Исполнители</a></li>
