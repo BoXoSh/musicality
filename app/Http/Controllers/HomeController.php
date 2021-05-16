@@ -81,7 +81,7 @@ class HomeController extends Controller
     {
         $posts = Post::query()
             ->select('post.*')
-            ->where('xfields', 'ilike', '%genre|%' . $genre . '%')
+            ->whereRaw('xfields like \'?\'', ['%genre|%' . $genre . '%'])
             ->paginate(15);
 
         return $this->view('genre', [
