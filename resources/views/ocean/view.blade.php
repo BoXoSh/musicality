@@ -6,13 +6,18 @@ $song_name = $xfields->get(config('xfields.song_name'));
 $artist_name = $xfields->get(config('xfields.artist_name'));
 $artists_url = str_replace('\"', '"', $xfields->get(config('xfields.artists_url')));
 $song_poster = $xfields->get(config('xfields.song_poster'));
-if(empty($song_poster))
+if (empty($song_poster))
     $song_poster = '/ocean/images/no_image.jpg';
 
 $mp3_url = $xfields->get(config('xfields.mp3_url'));
 $youtube_id = $xfields->get(config('xfields.youtube_id'));
 if ($youtube_id === '{id_youtube_0}')
     $youtube_id = null;
+
+$genres = $xfields->get('genre');
+if (!empty($genres))
+    $genres = implode(', ', getGenreUrl($genres));
+
 ?>
 @section('title', $post->title.' Скачать свежую музыку бесплатно')
 @extends('layouts.ocean')
@@ -29,6 +34,9 @@ if ($youtube_id === '{id_youtube_0}')
 
                         <li><span>Артисты:</span> <span>{!! $artists_url !!}</span></li>
                         <li><span>Альбом:</span> <span>{!! $xfields->get(config('xfields.album_url')) !!} </span></li>
+                        @if(!empty($genres))
+                        <li><span>Жанры:</span> <span>{!! $genres !!} </span></li>
+                        @endif
                         <li><span>Размер:</span> <span>{{ $xfields->get(config('xfields.song_filesize')) }} MB</span></li>
                         <li><span>Длительность:</span> <span>{{ $xfields->get(config('xfields.song_duration')) }}</span></li>
                         <li><span>Год:</span> <span>{{ $xfields->get(config('xfields.song_year')) }}</span></li>
@@ -55,24 +63,25 @@ if ($youtube_id === '{id_youtube_0}')
             <div class="sect sect-bg">
                 <div class="sect-header sect-title">Клип на песню</div>
                 <div class="sect-content video-box">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $youtube_id }}" frameborder="0"
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $youtube_id }}"
+                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>
             </div>
         @endif
-            <div class="sect sect-bg">
-                <div class="sect-header sect-title">Текст песни</div>
-                <div class="sect-content ftext full-text clearfix">
-                    {!! $post->full_story !!}
-                </div>
+        <div class="sect sect-bg">
+            <div class="sect-header sect-title">Текст песни</div>
+            <div class="sect-content ftext full-text clearfix">
+                {!! $post->full_story !!}
             </div>
+        </div>
 
-            <div class="sect sect-bg">
-                <div class="sect-header sect-title">Похожие песни</div>
-                <div class="sect-content">
-                    @include('ocean.parts.short_news', ['posts' => $related_posts])
-                </div>
+        <div class="sect sect-bg">
+            <div class="sect-header sect-title">Похожие песни</div>
+            <div class="sect-content">
+                @include('ocean.parts.short_news', ['posts' => $related_posts])
             </div>
+        </div>
     </article>
 @endsection

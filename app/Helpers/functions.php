@@ -13,15 +13,25 @@ function parseXfield($xfield_str = "")
     return $r;
 }
 
-if(!function_exists('getQuery')){
+if (!function_exists('getQuery')) {
 
 //    require app_path('Helpers/helpers.php');
 //    dd(getQuery($productsQuery));
 
 
-    function getQuery($sql){
+    function getQuery($sql)
+    {
         $query = str_replace(array('?'), array('\'%s\''), $sql->toSql());
         $query = vsprintf($query, $sql->getBindings());
         return $query;
     }
+}
+
+function getGenreUrl($string)
+{
+    $genres = array_map(function ($genre) {
+        return '<a href="/genre/' . $genre . '">' . $genre . '</a>';
+    }, explode(',', $string));;
+
+    return $genres;
 }
