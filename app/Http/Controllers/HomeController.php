@@ -80,7 +80,7 @@ class HomeController extends Controller
     public function getGenre($genre)
     {
         $posts = Post::query()
-            ->whereRaw('LOWER(xfields) like \'?\'', ['%genre|%' . mb_strtolower($genre) . '%'])
+            ->whereRaw('LOWER(xfields) like ?', ['%genre|%' . mb_strtolower($genre) . '%'])
             ->paginate(15);
 
         return $this->view('genre', [

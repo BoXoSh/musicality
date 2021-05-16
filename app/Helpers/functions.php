@@ -12,3 +12,16 @@ function parseXfield($xfield_str = "")
     }
     return $r;
 }
+
+if(!function_exists('getQuery')){
+
+//    require app_path('Helpers/helpers.php');
+//    dd(getQuery($productsQuery));
+
+
+    function getQuery($sql){
+        $query = str_replace(array('?'), array('\'%s\''), $sql->toSql());
+        $query = vsprintf($query, $sql->getBindings());
+        return $query;
+    }
+}
