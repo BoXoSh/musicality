@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -80,14 +81,21 @@ class HomeController extends Controller
 
     public function getGenre($genre)
     {
+        $titles = [
+            'Детская' => 'Детские'
+        ];
+
+
         $posts = Post::query()
             ->whereRaw('LOWER(xfields) like ?', ['%genre|%' . mb_strtolower($genre) . '%'])
             ->orderByDesc('id')
             ->paginate(15);
 
+        $title = Arr::get($titles, $genre, $genre);
+
         return $this->view('genre', [
             'posts' => $posts,
-            'title' => $genre
+            'title' => $title
         ]);
     }
 
