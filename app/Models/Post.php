@@ -49,6 +49,11 @@ class Post extends Model
         return collect(parseXfield($xfields));
     }
 
+    public function categoryModel()
+    {
+        return $this->hasOne(Category::class, 'id', 'category');
+    }
+
     public function extras()
     {
         return $this->hasOne(PostExtras::class, 'news_id', 'id');

@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -87,6 +88,17 @@ class HomeController extends Controller
         return $this->view('genre', [
             'posts' => $posts,
             'title' => $genre
+        ]);
+    }
+
+    public function getCategory($alt_name)
+    {
+        $category = Category::query()->where('alt_name', $alt_name)->where('active', 1)->firstOrFail();
+        $posts = Post::query()->where('category', $category->id)->paginate(15);
+
+        return $this->view('category', [
+            'category'=> $category,
+            'posts' => $posts
         ]);
     }
 }
