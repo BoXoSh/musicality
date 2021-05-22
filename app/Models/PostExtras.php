@@ -30,4 +30,5 @@ class PostExtras extends Model
     use HasFactory;
 
     protected $table = 'dle_post_extras';
+    protected $guarded = [];
 }

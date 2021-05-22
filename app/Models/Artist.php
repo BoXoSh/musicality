@@ -25,4 +25,5 @@ class Artist extends Model
 {
     use HasFactory;
     protected $table = "artists";
+    protected $guarded = [];
 }

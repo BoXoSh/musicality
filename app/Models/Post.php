@@ -37,6 +37,7 @@ use Illuminate\Support\Collection;
 class Post extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     protected $table = 'dle_post';
 
