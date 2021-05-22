@@ -15,6 +15,107 @@ class ParserController extends Controller
 
     public $rootPath = '../admin.muz.asia/';
 
+    public function starmediakg()
+    {
+        $category_id = 7;
+        $urlProxy = 'https://parser.top/most.php?url=';
+        $dom = new Document($urlProxy . 'https://starmedia.kg/vse-pesni/', true);
+        $items = $dom->first('main#content')->findInDocument('.audio-player');
+
+        foreach ($items as $item) {
+            $song_title_el = $item->firstInDocument('.muz-title a');
+
+            if (!$song_title_el)
+                continue;
+
+            $track_link = $item->firstInDocument('.muz-dw');
+
+            if (!$track_link)
+                continue;
+
+            $track_link = $track_link->attr('href');
+
+            $full_title = trim($song_title_el->text());
+
+            list($artist, $title) = explode(' — ', $full_title);
+
+            if (empty($artist) || empty($title))
+                continue;
+
+            $artist = trim($artist);
+            $title = trim($title);
+
+            $full_title = $artist . ' - ' . $title;
+
+            $track_time = '0:00';
+
+            $artistModel = $this->createArtist($artist);
+            $alt_name = Str::slug($full_title);
+
+            if (Post::query()->where('alt_name', $alt_name)->exists())
+                continue;
+
+            $track_path = 'uploads/files/' . Str::random() . '_' . $alt_name . '.mp3';
+
+            if (!$filesize = $this->saveFile($urlProxy . $track_link, $track_path))
+                continue;
+
+            $xfields = 'artist_name|' . $artist . '||track_name|' . $title . '||name|{name}||description|{description}||id_youtube_0|{id_youtube_0}||duration|' . $track_time . '||size|' . $this->formatSizeUnits($filesize) . '||year|2021';
+
+
+            if ($artistModel) {
+                $xfields .= '||artists_link|<a href=\"/artist/' . $artistModel->id . '-' . $artistModel->url . '.html\">' . $artist . '</a>||id_artist|' . $artistModel->id_zvuk;
+                if (!empty($img)) {
+                    $xfields .= '||poster|' . $artistModel->poster . '||image|' . $img;
+                }
+            }
+
+            if (!empty($track_path))
+                $xfields .= '||music_link|/' . $track_path;
+
+            $post = Post::create([
+                'autor' => 'Admin',
+                'date' => date('Y-m-d H:i:s'),
+                'short_story' => '',
+                'full_story' => '',
+                'xfields' => $xfields,
+                'title' => $full_title,
+                'descr' => '',
+                'keywords' => '',
+                'category' => $category_id,
+                'alt_name' => Str::slug($full_title),
+                'comm_num' => 0,
+                'allow_comm' => 1,
+                'allow_main' => 1,
+                'approve' => 1,
+                'fixed' => 0,
+                'allow_br' => 1,
+                'symbol' => '',
+                'tags' => $full_title,
+                'metatitle' => $full_title,
+                'zvuk_id' => 0,
+            ]);
+
+            if (!$post)
+                continue;
+
+
+            PostExtrasCats::create([
+                'news_id' => $post->id,
+                'cat_id' => $category_id
+            ]);
+
+            PostExtras::create([
+                'news_id' => $post->id,
+                'related_ids' => '',
+                'access' => '',
+                'editor' => '',
+                'reason' => '',
+                'user_id' => 1
+            ]);
+        }
+    }
+
     public function kzmp3()
     {
         $category_id = 8;
