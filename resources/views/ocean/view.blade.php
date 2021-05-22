@@ -49,7 +49,7 @@ if(stripos($filesize, "MB") === false)
                             <li><span>Жанры:</span> <span>{!! $genres !!}</span></li>
                         @endif
 
-                        <li><span>Размер:</span> <span>{{ $filesize }} MB</span></li>
+                        <li><span>Размер:</span> <span>{{ $filesize }}</span></li>
                         <li><span>Длительность:</span> <span>{{ $xfields->get(config('xfields.song_duration')) }}</span></li>
                         <li><span>Год:</span> <span>{{ $xfields->get(config('xfields.song_year')) }}</span></li>
                     </ul>
