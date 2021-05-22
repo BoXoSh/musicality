@@ -31,8 +31,11 @@ class ParserController extends Controller
             $track_time = $item->firstInDocument('.track-time');
             $track_time = $track_time ? $track_time->text() : '';
 
-            $artistModel = $this->createArtist($artist, empty($img) ? $img : null);
+            $artistModel = $this->createArtist($artist, !empty($img) ? $img : null);
             $alt_name = Str::slug($full_title);
+
+            if (Post::query()->where('alt_name', $alt_name)->exists())
+                continue;
 
             $track_path = 'uploads/files/' . Str::random() . '_' . $alt_name . '.mp3';
 
