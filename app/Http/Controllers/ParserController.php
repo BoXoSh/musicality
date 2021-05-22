@@ -95,8 +95,6 @@ class ParserController extends Controller
                 'reason' => '',
                 'user_id' => 1
             ]);
-
-            exit;
         }
     }
 

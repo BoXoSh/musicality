@@ -18,6 +18,15 @@ $genres = $xfields->get('genre');
 if (!empty($genres))
     $genres = implode(', ', getGenreUrl($genres));
 
+$albom_url = $xfields->get(config('xfields.album_url'));
+
+
+$filesize = $xfields->get(config('xfields.song_filesize'));
+
+if(stripos($filesize, "MB") === false)
+    $filesize .= " MB"
+
+
 ?>
 @section('title', $post->title.' Скачать свежую музыку бесплатно')
 @extends('layouts.ocean')
@@ -33,11 +42,14 @@ if (!empty($genres))
                     <ul class="finfo">
 
                         <li><span>Артисты:</span> <span>{!! $artists_url !!}</span></li>
-                        <li><span>Альбом:</span> <span>{!! $xfields->get(config('xfields.album_url')) !!} </span></li>
-                        @if(!empty($genres))
-                        <li><span>Жанры:</span> <span>{!! $genres !!} </span></li>
+                        @if(!empty($albom_url))
+                            <li><span>Альбом:</span> <span>{!! $albom_url !!}</span></li>
                         @endif
-                        <li><span>Размер:</span> <span>{{ $xfields->get(config('xfields.song_filesize')) }} MB</span></li>
+                        @if(!empty($genres))
+                            <li><span>Жанры:</span> <span>{!! $genres !!}</span></li>
+                        @endif
+
+                        <li><span>Размер:</span> <span>{{ $filesize }} MB</span></li>
                         <li><span>Длительность:</span> <span>{{ $xfields->get(config('xfields.song_duration')) }}</span></li>
                         <li><span>Год:</span> <span>{{ $xfields->get(config('xfields.song_year')) }}</span></li>
                     </ul>
