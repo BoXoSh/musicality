@@ -48,7 +48,7 @@ class ParserController extends Controller
             if ($artistModel) {
                 $xfields .= '||artists_link|<a href=\"/artist/' . $artistModel->id . '-' . $artistModel->url . '.html\">' . $artist . '</a>||id_artist|' . $artistModel->id_zvuk;
                 if (!empty($img)) {
-                    $xfields .= '||poster|/' . $artistModel->poster . '||image|' . $img;
+                    $xfields .= '||poster|' . $artistModel->poster . '||image|' . $img;
                 }
             }
 
