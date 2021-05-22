@@ -71,7 +71,7 @@ class ParserController extends Controller
                 'allow_br' => 1,
                 'symbol' => '',
                 'tags' => $full_title,
-                'meta_title' => $full_title,
+                'metatitle' => $full_title,
                 'zvuk_id' => 0,
             ]);
 
