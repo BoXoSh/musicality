@@ -40,7 +40,6 @@ if(stripos($filesize, "MB") === false)
                 <div class="fdesc fx-1">
                     <h1 class="sect-title sect-header"><span>{!! $artists_url !!}</span> - {{ $song_name }}</h1>
                     <ul class="finfo">
-
                         <li><span>Артисты:</span> <span>{!! $artists_url !!}</span></li>
                         @if(!empty($albom_url))
                             <li><span>Альбом:</span> <span>{!! $albom_url !!}</span></li>
