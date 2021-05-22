@@ -130,7 +130,7 @@ class ParserController extends Controller
     public function saveFile($url, $path)
     {
         $path = base_path($this->rootPath . $path);
-        return copy($url, $path) ? filesize($this->rootPath . $path) : false;
+        return copy($url, $path) ? filesize($path) : false;
     }
 
     public function formatSizeUnits($bytes)
