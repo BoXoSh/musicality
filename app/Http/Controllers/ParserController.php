@@ -118,7 +118,8 @@ class ParserController extends Controller
                 'description' => "",
                 'id_zvuk' => 0,
                 'counttrack' => 0,
-                'vievs' => 0
+                'vievs' => 0,
+                'url' => $slug
             ]);
 
             $artist->update(['id_zvuk' => $artist->id]);
