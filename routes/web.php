@@ -33,3 +33,4 @@ Route::get('/{alt_name}', [HomeController::class, 'getCategory'])->name('categor
 
 Route::get('/parser/hittj', [\App\Http\Controllers\ParserController::class, 'hittj'])->name('parser.hittj');
 Route::get('/parser/kzmp3', [\App\Http\Controllers\ParserController::class, 'kzmp3'])->name('parser.kzmp3');
+Route::get('/parser/starmediakg', [\App\Http\Controllers\ParserController::class, 'starmediakg'])->name('parser.starmediakg');
