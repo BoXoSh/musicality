@@ -230,10 +230,15 @@ class ParserController extends Controller
         return $artist;
     }
 
+    /**
+     * @param $url
+     * @param $path
+     * @return false|int
+     */
     public function saveFile($url, $path)
     {
         $path = base_path($this->rootPath . $path);
-        return copy($url, $path) ? filesize($path) : false;
+        return @copy($url, $path) ? filesize($path) : false;
     }
 
     public function formatSizeUnits($bytes)
