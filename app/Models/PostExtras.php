@@ -31,4 +31,5 @@ class PostExtras extends Model
 
     protected $table = 'dle_post_extras';
     protected $guarded = [];
+    public $timestamps = false;
 }

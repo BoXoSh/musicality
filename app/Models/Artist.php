@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = "artists";
     protected $guarded = [];
 }
