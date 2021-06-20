@@ -31,6 +31,7 @@ Route::get('/artist/{id}-{slug}.html', [ArtistsController::class, 'getShow'])->n
 Route::get('/genre/{genre}', [HomeController::class, 'getGenre'])->name('genre.view')->where('slug', '[a-z0-9-.]+');
 Route::get('/{alt_name}', [HomeController::class, 'getCategory'])->name('category.view')->where('alt_name', '[a-z0-9-.]+');
 
+Route::get('/parser/topmp3', [\App\Http\Controllers\ParserController::class, 'topmp3'])->name('parser.topmp3');
 Route::get('/parser/hittj', [\App\Http\Controllers\ParserController::class, 'hittj'])->name('parser.hittj');
 Route::get('/parser/kzmp3', [\App\Http\Controllers\ParserController::class, 'kzmp3'])->name('parser.kzmp3');
 Route::get('/parser/starmediakg', [\App\Http\Controllers\ParserController::class, 'starmediakg'])->name('parser.starmediakg');
