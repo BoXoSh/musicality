@@ -43,7 +43,7 @@ class ParserController extends Controller
             $full_title = $artist . ' - ' . $title;
 
             $track_time = $item->firstInDocument('.track-time');
-            $track_time = $track_time ? $track_time->text : "0:00";
+            $track_time = $track_time ? $track_time->text() : "0:00";
 
             $artistModel = $this->createArtist($artist);
             $alt_name = Str::slug($full_title);
